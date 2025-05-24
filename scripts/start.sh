@@ -1,2 +1,2 @@
 #!/bin/bash
-./build/NeuralNetworkDino.exe
+./build/NeuralNetworkExperiment.exe
