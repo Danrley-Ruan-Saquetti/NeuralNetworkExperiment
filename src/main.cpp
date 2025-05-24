@@ -6,7 +6,11 @@
 
 #include <cmath>
 #include <iostream>
+#include <vector>
 
+#include "nn/activation_function.hpp"
+#include "nn/individual.hpp"
+#include "nn/neural_network.hpp"
 #include "nn/population.hpp"
 
 float simulate(const nn::NeuralNetwork& network) {
