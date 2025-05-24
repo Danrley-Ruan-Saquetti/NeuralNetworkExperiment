@@ -2,7 +2,7 @@
 
 #include <random>
 
-#include "individual.hpp"
+#include "nn/individual.hpp"
 
 namespace nn {
 struct Population {

@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "layer.hpp"
+#include "nn/layer.hpp"
 #include "utils.hpp"
 
 namespace nn {

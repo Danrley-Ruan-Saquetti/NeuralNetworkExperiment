@@ -2,12 +2,12 @@
 
 #include <random>
 
-#include "activation_function.hpp"
+#include "nn/activation_function.hpp"
 #include "utils.hpp"
 
 namespace nn {
 struct Layer {
-  std::matriz<float> weights;
+  util::matriz<float> weights;
   std::vector<float> bias;
 
   ActivationFunction activation;

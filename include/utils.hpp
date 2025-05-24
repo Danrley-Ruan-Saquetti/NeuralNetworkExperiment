@@ -2,7 +2,7 @@
 
 #include <vector>
 
-namespace std {
+namespace util {
 template <typename T>
 using matriz = std::vector<std::vector<T>>;
 }

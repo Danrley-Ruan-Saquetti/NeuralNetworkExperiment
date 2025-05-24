@@ -13,11 +13,17 @@
 #include "nn/neural_network.hpp"
 #include "nn/population.hpp"
 
-float simulate(const nn::NeuralNetwork& network) {
+float simulate(const nn::Individual& individual) {
   std::vector<float> input = {1.0f, 1.0f};
-  std::vector<float> output = network.feedforward(input);
+  std::vector<float> output = individual.network.feedforward(input);
 
   return 1.0f - std::abs(1.0f - output[0]);
+}
+
+float evaluate(const nn::Individual& individual) {
+  float output = simulate(individual);
+
+  return 1.0f - std::abs(1.0f - output);
 }
 
 int main() {
@@ -28,7 +34,7 @@ int main() {
 
   for (int generation = 0; generation < GENERATIONS; ++generation) {
     for (auto& individual : population.individuals) {
-      individual.fitness = simulate(individual.network);
+      individual.fitness = evaluate(individual);
     }
 
     const nn::Individual& best = population.getBest();
@@ -37,12 +43,8 @@ int main() {
     population.evolve(MUTATION_RATE, MUTATION_STRENGTH, ELITE_COUNT);
   }
 
-  const nn::Individual& finalBest = population.getBest();
-  std::vector<float> testInput = {1.0f, 1.0f};
-
-  std::vector<float> result = finalBest.network.feedforward(testInput);
-
-  std::cout << "Best score: " << result[0] << std::endl;
+  float result = simulate(population.getBest());
+  std::cout << "Best score: " << result << std::endl;
 
   return 0;
 }

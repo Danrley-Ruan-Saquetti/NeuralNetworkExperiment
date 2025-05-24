@@ -1,6 +1,6 @@
 #pragma once
 
-#include "neural_network.hpp"
+#include "nn/neural_network.hpp"
 
 namespace nn {
 struct Individual {
