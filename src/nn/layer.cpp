@@ -9,7 +9,7 @@ namespace nn {
 Layer::Layer(int inputs, int outputs, ActivationFunction activation) : activation(activation) {
   std::random_device rd;
   std::default_random_engine engine(rd());
-  std::uniform_real_distribution<float> dist(-1.0f, 1.0f);
+  std::uniform_real_distribution<float> dist(-4.0f, 4.0f);
 
   weights.resize(outputs, std::vector<float>(inputs));
   bias.resize(outputs);
