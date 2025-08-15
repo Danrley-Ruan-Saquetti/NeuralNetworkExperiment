@@ -2,7 +2,7 @@
 #define GENERATIONS 100
 #define ELITE_COUNT 5
 #define MUTATION_RATE 0.1f
-#define MUTATION_STRENGTH 0.3f
+#define MUTATION_STRENGTH 0.2f
 
 #include <cmath>
 #include <iostream>
